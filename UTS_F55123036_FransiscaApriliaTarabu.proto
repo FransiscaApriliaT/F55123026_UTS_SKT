@@ -1,0 +1,31 @@
+syntax = "proto3";
+package calculator;
+
+service Calculator {
+  rpc Persegi (PersegiRequest) returns (PersegiResponse);
+  rpc PersegiPanjang (PersegiPanjangRequest) returns (PerseiPanjangResponse);
+  rpc Segitiga (SegitigaRequest) returns (SegitigaResponse);
+  rpc Lingkaran (LingkaranRequest) returns (LingkaranResponse);
+}
+
+message PersegiRequest {
+  double sisi = 1;
+}
+
+message PersegiPanjangRequest {
+  double panjang = 1;
+  double lebar = 2;
+}
+
+message SegitigaRequest {
+  double alas = 1;
+  double tinggi = 2;
+}
+
+message LingkaranRequest {
+  double jari_jari = 1;
+}
+
+message LuasResponse {
+  double luas = 1;
+}
